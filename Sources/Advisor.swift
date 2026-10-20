@@ -16,6 +16,15 @@ func displayName(_ app: AppUsage) -> String {
     app.name == Memory.webContentKey ? L("app.webcontent") : app.name
 }
 
+// The dot changes shape as well as colour, so the level reads without colour vision
+func levelGlyph(_ level: Int) -> String {
+    switch level { case 1: "●"; case 2: "◐"; default: "▲" }
+}
+
+func levelColor(_ level: Int) -> NSColor {
+    switch level { case 1: .systemGreen; case 2: .systemOrange; default: .systemRed }
+}
+
 struct Tip {
     let text: String
     var fix: (() -> Void)? = nil
@@ -36,10 +45,15 @@ enum Advisor {
     ]
     static let browsers: Set<String> = ["Firefox", "Google Chrome", "Arc", "Brave Browser", "Microsoft Edge", "Vivaldi", "Opera", Memory.webContentKey]
 
-    static func tips(for s: Snapshot, swapGrowth: (bytes: UInt64, minutes: Int)? = nil) -> [Tip] {
+    static let idleHours = 2
+
+    // History is what the menu bar app has watched over time; the one-shot `mem` command has none
+    static func tips(for s: Snapshot, history: History? = nil) -> [Tip] {
+        let swapGrowth = history?.swapGrowth
         let growing = (swapGrowth?.bytes ?? 0) >= 512 << 20
         let heavySwap = s.swapUsed >= s.physical * 2 / 5
-        if s.level == 1 && !growing && s.swapUsed < s.physical / 4 { return [] }
+        let watched = watchedTips(for: s, history: history)
+        if s.level == 1 && !growing && s.swapUsed < s.physical / 4 { return watched }
 
         let running = NSWorkspace.shared.runningApplications.filter { $0.activationPolicy == .regular }
         func runningApp(_ u: AppUsage) -> NSRunningApplication? {
@@ -70,6 +84,8 @@ enum Advisor {
             tips.append(Tip(text: L("tip.swapGrowth", size(g.bytes), g.minutes, displayName(top))))
         }
 
+        tips += watched
+
         if s.level >= 2 {
             if let b = s.apps.first(where: { browsers.contains($0.name) && $0.bytes >= 800 << 20 }) {
                 tips.append(Tip(text: L("tip.browser", displayName(b), size(b.bytes))))
@@ -78,6 +94,31 @@ enum Advisor {
         }
 
         if heavySwap { tips.append(Tip(text: L("tip.restart", size(s.swapUsed)))) }
+        return tips
+    }
+
+    // Worth knowing even when memory is fine: an app that keeps growing, and apps left open for nothing
+    static func watchedTips(for s: Snapshot, history: History?) -> [Tip] {
+        guard let history else { return [] }
+        var tips: [Tip] = []
+        let running = NSWorkspace.shared.runningApplications
+
+        if let g = history.growing(in: s) {
+            let app = g.app.bundlePath.flatMap { p in running.first { $0.bundleURL?.path == p && $0.activationPolicy == .regular } }
+            tips.append(Tip(text: L(app == nil ? "tip.growing" : "tip.growing.quit", displayName(g.app), size(g.bytes), g.minutes),
+                            fix: app.map { a in { a.terminate() } }))
+        }
+
+        let idle = history.idleApps(hours: idleHours).compactMap { a in
+            s.apps.first { $0.bundlePath == a.bundleURL?.path }.map { (app: a, usage: $0) }
+        }
+        let total = idle.reduce(0) { $0 + $1.usage.bytes }
+        if total >= 300 << 20 {
+            let text = idle.count == 1
+                ? L("tip.idle.one", idle[0].usage.name, idleHours, size(total))
+                : L("tip.idle", idle.count, idleHours, size(total), idle.map(\.usage.name).joined(separator: ", "))
+            tips.append(Tip(text: text) { idle.forEach { $0.app.terminate() } })
+        }
         return tips
     }
 }

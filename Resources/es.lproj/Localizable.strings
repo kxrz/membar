@@ -42,3 +42,12 @@
 "sub.loginItems" = "La gran mejora: apps que se abren solas al iniciar";
 "lighten.footer" = "Abre el panel adecuado de Ajustes, tú activas la opción";
 "unit.gbInt" = "%d GB";
+
+"chart" = "Swap, últimos 30 min · máximo %@";
+"tip.growing" = "%1$@ creció %2$@ en %3$d min: si sigue subiendo, reiniciarla libera todo";
+"tip.growing.quit" = "%1$@ creció %2$@ en %3$d min: ciérrala, al reabrirla se libera todo";
+"tip.idle.one" = "%1$@, sin usar desde hace más de %2$d h, ocupa %3$@: ciérrala";
+"tip.idle" = "%1$d apps sin usar desde hace más de %2$d h ocupan %3$@ (%4$@): ciérralas";
+"menu.showSwap" = "Mostrar el swap en la barra de menús";
+"update" = "Actualizar a MemBar %@";
+"update.sub" = "Se recompila desde el código, vuelve en un minuto";

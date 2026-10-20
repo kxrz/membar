@@ -43,7 +43,8 @@ MemBar fait une seule chose : **traduire les chiffres en conseils que tu peux ap
 
 | | |
 |---|---|
-| **● 2,4G** dans la barre des menus | Une pastille **verte, orange ou rouge** selon le niveau de pression mémoire calculé par le noyau lui-même, suivie du swap utilisé. Rafraîchie toutes les 15 secondes. |
+| **● 2,4G** dans la barre des menus | Une pastille selon le niveau de pression mémoire calculé par le noyau lui-même : **● vert, ◐ orange, ▲ rouge**. La forme change aussi, pour se lire sans les couleurs. Suivie du swap utilisé, que tu peux masquer. Rafraîchie toutes les 15 secondes. |
+| **Courbe du swap** | Les 30 dernières minutes de swap, une barre par mesure, colorée selon la pression. On voit d'un coup d'œil si ça monte ou si ça tient. |
 | **Plus gros consommateurs** | Chaque app est mesurée comme dans la colonne *Mémoire* du Moniteur d'activité, avec ses processus annexes additionnés. Une ligne pour Notion au lieu de quatorze. **Un clic sur une app la quitte.** |
 | **Étiquette Electron** | Signale les apps qui embarquent leur propre Chrome. Ce sont souvent les plus lourdes. |
 | **Que faire** | De courts conseils calculés d'après ce qui tourne en ce moment. Certains s'appliquent en un clic. |
@@ -52,7 +53,14 @@ MemBar fait une seule chose : **traduire les chiffres en conseils que tu peux ap
 
 ## Comment elle décide
 
-Quand la pression est **normale** et le swap faible, le menu affiche seulement *« Rien à faire, tout va bien 👍 »*. Sinon :
+Deux conseils apparaissent quelle que soit la pression, parce qu'il vaut mieux les connaître tôt :
+
+| Tu vois | Parce que | Le clic fait |
+|---|---|---|
+| *Firefox a pris 700 Mo en 40 min* | Une app a gagné au moins 500 Mo et 50 % par rapport à sa mesure la plus basse de l'heure écoulée, avec au moins 10 minutes de recul. Souvent un onglet qui s'emballe ou une fuite. | Quitte l'app, qui repart à neuf quand tu la rouvres. |
+| *3 apps inutilisées depuis plus de 2 h occupent 900 Mo* | Des apps ouvertes qui ne sont pas passées au premier plan depuis 2 h, comptées depuis le lancement de MemBar. Les terminaux, lecteurs de musique et apps d'appel ne sont jamais comptés : les quitter couperait quelque chose. | Les quitte (chacune peut te proposer d'enregistrer). |
+
+Quand la pression est **normale** et le swap faible, le reste se tait : *« Rien à faire, tout va bien 👍 »*. Sinon :
 
 | Tu vois | Parce que | Le clic fait |
 |---|---|---|
@@ -94,6 +102,8 @@ Le script **compile MemBar sur ton Mac** à partir des ~400 lignes de [`Sources/
 Si macOS te propose d'installer les *outils de ligne de commande*, accepte, ou lance d'abord `xcode-select --install`. C'est le compilateur gratuit d'Apple.
 
 **Désinstaller :** `./uninstall.sh`, ou supprime `~/Applications/MemBar.app`, `~/.local/bin/mem` et `~/Library/LaunchAgents/io.github.kxrz.membar.plist`.
+
+**Mises à jour :** une fois par jour, MemBar demande à GitHub le numéro de la dernière version. Rien sur ton Mac n'est envoyé. Quand une nouvelle version sort, une ligne *Mettre à jour* apparaît dans le menu : un clic reconstruit MemBar depuis le code source, comme l'installation, et elle revient en une minute. Pour couper la vérification : `defaults write io.github.kxrz.membar checkUpdates -bool NO`.
 
 ## Dans le terminal : `mem`
 

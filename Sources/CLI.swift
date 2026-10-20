@@ -6,7 +6,7 @@ enum CLI {
         let s = Memory.snapshot()
         let tty = isatty(STDOUT_FILENO) != 0
         let ansi = [1: "32", 2: "33"][s.level] ?? "31"
-        let dot = tty ? "\u{1B}[\(ansi)m●\u{1B}[0m" : "●"
+        let dot = tty ? "\u{1B}[\(ansi)m\(levelGlyph(s.level))\u{1B}[0m" : levelGlyph(s.level)
 
         print("\(dot) \(L("header", L("pressure.\(min(s.level, 4))")))  ·  \(stats(s))")
         for a in s.apps.prefix(top) {

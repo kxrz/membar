@@ -42,3 +42,12 @@
 "sub.loginItems" = "Le vrai gain : les apps qui se lancent en douce au démarrage";
 "lighten.footer" = "Ouvre le bon panneau des Réglages, c’est toi qui actives";
 "unit.gbInt" = "%d Go";
+
+"chart" = "Swap, 30 dernières min · pic %@";
+"tip.growing" = "%1$@ a pris %2$@ en %3$d min : si ça continue, le relancer libère tout";
+"tip.growing.quit" = "%1$@ a pris %2$@ en %3$d min : le quitter, le rouvrir libère tout";
+"tip.idle.one" = "%1$@, inutilisée depuis plus de %2$d h, occupe %3$@ : la quitter";
+"tip.idle" = "%1$d apps inutilisées depuis plus de %2$d h occupent %3$@ (%4$@) : les quitter";
+"menu.showSwap" = "Afficher le swap dans la barre des menus";
+"update" = "Mettre à jour vers MemBar %@";
+"update.sub" = "Reconstruit depuis le code source, de retour dans une minute";

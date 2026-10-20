@@ -33,7 +33,8 @@ codesign --force --sign - "$APP" 2>/dev/null
 printf '#!/bin/sh\nexec "%s/Contents/MacOS/MemBar" mem "$@"\n' "$APP" > "$BIN_DIR/mem"
 chmod +x "$BIN_DIR/mem"
 
-"$APP/Contents/MacOS/MemBar" --enable-login
+# An update keeps the login choice as it was
+[[ -n "${MEMBAR_UPDATE:-}" ]] || "$APP/Contents/MacOS/MemBar" --enable-login
 open "$APP"
 
 echo "✓ MemBar is in your menu bar and will open at login."

@@ -44,7 +44,8 @@ MemBar does one thing: it **turns the numbers into advice you can act on**.
 
 | | |
 |---|---|
-| **● 2.4G** in the menu bar | A dot coloured **green, orange or red** by the kernel's own memory-pressure level, followed by the swap in use. Refreshed every 15 seconds. |
+| **● 2.4G** in the menu bar | A dot for the kernel's own memory-pressure level: **● green, ◐ orange, ▲ red**. The shape changes too, so it reads without colour. Followed by the swap in use, which you can hide. Refreshed every 15 seconds. |
+| **Swap curve** | The last 30 minutes of swap, one bar per reading, coloured by pressure. You see at a glance whether it's climbing or holding. |
 | **Biggest consumers** | Apps sized the way Activity Monitor's *Memory* column sizes them, with every helper process added to its parent app. One line for Notion instead of fourteen. **Click an app to quit it.** |
 | **Electron tag** | Shows which apps bundle their own copy of Chrome. These are usually the heaviest ones. |
 | **What to do** | Short tips worked out from what is actually running right now. Some of them are one click. |
@@ -53,7 +54,14 @@ MemBar does one thing: it **turns the numbers into advice you can act on**.
 
 ## How it decides
 
-When pressure is **normal** and swap is low, the menu shows *"Nothing to do, all good 👍"* and nothing else. Otherwise:
+Two tips come up whatever the pressure, because they're worth knowing early:
+
+| You see | Because | One click does |
+|---|---|---|
+| *Firefox grew by 700 MB in 40 min* | An app gained at least 500 MB and 50% over its lowest reading of the past hour, with at least 10 minutes of history. Usually a runaway tab or a leak. | Quits the app, so reopening it starts fresh. |
+| *3 apps unused for over 2 h hold 900 MB* | Open apps that haven't been in front for 2 hours, counted from when MemBar started. Terminals, music players and call apps are never counted, since quitting them would cut something off. | Quits them (each may ask you to save first). |
+
+When pressure is **normal** and swap is low, the rest stays quiet: *"Nothing to do, all good 👍"*. Otherwise:
 
 | You see | Because | One click does |
 |---|---|---|
@@ -145,6 +153,8 @@ MemBar speaks **English, Français, Español, 日本語 and 简体中文**. It f
 **Why build from source instead of downloading an app?** A downloaded app needs a paid Apple notarization to open without a warning. Building locally avoids that, and you can read the code before it runs.
 
 **Should I worry about swap at all?** Apple Silicon SSDs are fast, so some swap is normal. What matters is the dot's colour and whether swap **keeps growing**. MemBar watches both.
+
+**Does it connect to the internet?** Once a day, to ask GitHub for the latest version number. Nothing about your Mac is sent. When a new version is out, an *Update* line appears in the menu: one click rebuilds MemBar from source, like the installer, and it's back within a minute. To turn the check off: `defaults write io.github.kxrz.membar checkUpdates -bool NO`.
 
 **Can it free memory by itself?** No, on purpose. The only way to really free memory is to quit something, and you're the one who knows what you need.
 

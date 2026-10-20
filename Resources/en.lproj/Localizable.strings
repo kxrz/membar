@@ -42,3 +42,12 @@
 "sub.loginItems" = "Biggest win: apps that launch silently at startup";
 "lighten.footer" = "Opens the right System Settings pane, you flip the switch";
 "unit.gbInt" = "%d GB";
+
+"chart" = "Swap, last 30 min · peak %@";
+"tip.growing" = "%1$@ grew by %2$@ in %3$d min: if it keeps climbing, a restart frees it all";
+"tip.growing.quit" = "%1$@ grew by %2$@ in %3$d min: quit it, reopening frees it all";
+"tip.idle.one" = "%1$@ unused for over %2$d h holds %3$@: quit it";
+"tip.idle" = "%1$d apps unused for over %2$d h hold %3$@ (%4$@): quit them";
+"menu.showSwap" = "Show swap in the menu bar";
+"update" = "Update to MemBar %@";
+"update.sub" = "Rebuilds from source, back in about a minute";
