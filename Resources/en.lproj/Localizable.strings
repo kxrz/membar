@@ -22,3 +22,22 @@
 "menu.login" = "Open at Login";
 "menu.about" = "About MemBar";
 "menu.quit" = "Quit MemBar";
+
+"lighten" = "Lighten macOS";
+"lighten.forThis" = "For this %1$@ with %2$@";
+"device.laptop" = "MacBook";
+"device.desktop" = "Mac";
+"lighten.visual" = "Visual effects";
+"lighten.transparency" = "Reduce transparency";
+"lighten.motion" = "Reduce motion";
+"lighten.desktop" = "Desktop";
+"lighten.widgets" = "Hide widgets on the desktop";
+"lighten.startup" = "At startup";
+"lighten.loginItems" = "Login items and background apps";
+"sub.on" = "Already on";
+"sub.gpu" = "Small gain: less work for the graphics chip";
+"sub.gpu.battery" = "Small gain: less graphics work, longer battery";
+"sub.widgets" = "Each widget runs as its own process";
+"sub.loginItems" = "Biggest win: apps that launch silently at startup";
+"lighten.footer" = "Opens the right System Settings pane, you flip the switch";
+"unit.gbInt" = "%d GB";

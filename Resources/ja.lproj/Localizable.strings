@@ -22,3 +22,22 @@
 "menu.login" = "ログイン時に開く";
 "menu.about" = "MemBarについて";
 "menu.quit" = "MemBarを終了";
+
+"lighten" = "macOSを軽くする";
+"lighten.forThis" = "この%1$@（メモリ %2$@）向け";
+"device.laptop" = "MacBook";
+"device.desktop" = "Mac";
+"lighten.visual" = "視覚効果";
+"lighten.transparency" = "透明度を下げる";
+"lighten.motion" = "視差効果を減らす";
+"lighten.desktop" = "デスクトップ";
+"lighten.widgets" = "デスクトップのウィジェットを隠す";
+"lighten.startup" = "起動時";
+"lighten.loginItems" = "ログイン項目とバックグラウンドアプリ";
+"sub.on" = "オン";
+"sub.gpu" = "小さな効果：グラフィックスの負荷を軽減";
+"sub.gpu.battery" = "小さな効果：グラフィックス負荷を軽減、バッテリー長持ち";
+"sub.widgets" = "ウィジェットはそれぞれ別プロセスで動作します";
+"sub.loginItems" = "最大の効果：起動時に勝手に開くアプリ";
+"lighten.footer" = "システム設定の該当パネルを開きます。切り替えはご自身で";
+"unit.gbInt" = "%d GB";

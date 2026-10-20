@@ -1,43 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="760" height="536" viewBox="0 0 760 536" font-family='-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif'>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="723" viewBox="0 0 1080 723" font-family='-apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif'>
 <defs><filter id="s" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-opacity="0.18"/></filter></defs>
-<rect width="760" height="536" rx="14" fill="#e9ecf1"/>
-<path d="M0 14 a14 14 0 0 1 14 -14 H746 a14 14 0 0 1 14 14 V30 H0 Z" fill="#f6f6f8"/>
+<rect width="1080" height="723" rx="14" fill="#e9ecf1"/>
+<path d="M0 14 a14 14 0 0 1 14 -14 H1066 a14 14 0 0 1 14 14 V30 H0 Z" fill="#f6f6f8"/>
 <text x="18" y="20" font-size="13" font-weight="700" fill="#1d1d1f">Finder</text>
-<rect x="204" y="4" width="64" height="22" rx="5" fill="#1d1d1f" fill-opacity="0.12"/>
-<text x="212" y="20" font-size="13" fill="#e0820b">●</text>
-<text x="226" y="20" font-size="13" fill="#1d1d1f" font-variant-numeric="tabular-nums">2.4G</text>
-<text x="744" y="20" font-size="13" text-anchor="end" fill="#1d1d1f">Tue 20 Oct  11:42</text>
-<g filter="url(#s)"><rect x="200" y="36" width="500" height="460" rx="10" fill="#f4f4f6" stroke="#d2d2d7"/></g>
-<text x="226" y="62" font-size="13" font-weight="700" fill="#e0820b">● Memory pressure: elevated</text>
-<text x="226" y="84" font-size="13" font-weight="400" fill="#8e8e93">37% free · 2.7 GB compressed · 2.4 GB swap</text>
-<line x1="212" x2="688" y1="95" y2="95" stroke="#dcdce0"/>
-<text x="214" y="117" font-size="11" font-weight="700" fill="#8e8e93">Biggest consumers</text>
-<text x="270" y="139" font-size="13" text-anchor="end" fill="#8e8e93">3.3 GB</text>
-<text x="280" y="139" font-size="13" fill="#8e8e93">Web pages (Safari, Mail…)</text>
-<text x="270" y="161" font-size="13" text-anchor="end" fill="#1d1d1f">1.5 GB</text>
-<text x="280" y="161" font-size="13" fill="#1d1d1f">Notion  · Electron</text>
-<text x="270" y="183" font-size="13" text-anchor="end" fill="#1d1d1f">1.3 GB</text>
-<text x="280" y="183" font-size="13" fill="#1d1d1f">Claude  · Electron</text>
-<text x="270" y="205" font-size="13" text-anchor="end" fill="#8e8e93">374 MB</text>
-<text x="280" y="205" font-size="13" fill="#8e8e93">claude</text>
-<text x="270" y="227" font-size="13" text-anchor="end" fill="#1d1d1f">346 MB</text>
-<text x="280" y="227" font-size="13" fill="#1d1d1f">Microsoft Outlook</text>
-<line x1="212" x2="688" y1="238" y2="238" stroke="#dcdce0"/>
-<text x="214" y="260" font-size="11" font-weight="700" fill="#8e8e93">What to do</text>
-<rect x="206" y="266" width="488" height="22" rx="5" fill="#0a64d6"/>
-<text x="226" y="282" font-size="13" font-weight="400" fill="#ffffff">Notion uses 1.5 GB: switch to the web version (quits the app)</text>
-<text x="226" y="304" font-size="13" font-weight="400" fill="#1d1d1f">Claude uses 1.3 GB: switch to the web version (quits the app)</text>
-<text x="226" y="326" font-size="13" font-weight="400" fill="#8e8e93">Web pages (Safari, Mail…) uses 3.3 GB: close or unload tabs</text>
-<text x="226" y="348" font-size="13" font-weight="400" fill="#8e8e93">Quit (⌘Q) apps you are not using, closing the window is not enough</text>
-<line x1="212" x2="688" y1="359" y2="359" stroke="#dcdce0"/>
-<text x="226" y="381" font-size="13" font-weight="400" fill="#1d1d1f">Open in Terminal</text>
-<text x="684" y="381" font-size="13" text-anchor="end" fill="#8e8e93">⌘T</text>
-<text x="226" y="403" font-size="13" font-weight="400" fill="#1d1d1f">Activity Monitor</text>
-<text x="684" y="403" font-size="13" text-anchor="end" fill="#8e8e93">⌘A</text>
-<text x="211" y="425" font-size="12" fill="#1d1d1f">✓</text>
-<text x="226" y="425" font-size="13" font-weight="400" fill="#1d1d1f">Open at Login</text>
-<line x1="212" x2="688" y1="436" y2="436" stroke="#dcdce0"/>
-<text x="226" y="458" font-size="13" font-weight="400" fill="#1d1d1f">About MemBar</text>
-<text x="226" y="480" font-size="13" font-weight="400" fill="#1d1d1f">Quit MemBar</text>
-<text x="684" y="480" font-size="13" text-anchor="end" fill="#8e8e93">⌘Q</text>
+<rect x="164" y="4" width="64" height="22" rx="5" fill="#1d1d1f" fill-opacity="0.12"/>
+<text x="172" y="20" font-size="13" fill="#e0820b">●</text>
+<text x="186" y="20" font-size="13" fill="#1d1d1f" font-variant-numeric="tabular-nums">2.4G</text>
+<text x="1064" y="20" font-size="13" text-anchor="end" fill="#1d1d1f">Tue 20 Oct  11:42</text>
+<g filter="url(#s)"><rect x="160" y="36" width="500" height="482" rx="10" fill="#f4f4f6" stroke="#d2d2d7"/></g>
+<text x="186" y="62" font-size="13" font-weight="700" fill="#e0820b">● Memory pressure: elevated</text>
+<text x="186" y="84" font-size="13" font-weight="400" fill="#8e8e93">37% free · 2.7 GB compressed · 2.4 GB swap</text>
+<line x1="172" x2="648" y1="95" y2="95" stroke="#dcdce0"/>
+<text x="174" y="117" font-size="11" font-weight="700" fill="#8e8e93">Biggest consumers</text>
+<text x="230" y="139" font-size="13" text-anchor="end" fill="#8e8e93">3.3 GB</text>
+<text x="240" y="139" font-size="13" fill="#8e8e93">Web pages (Safari, Mail…)</text>
+<text x="230" y="161" font-size="13" text-anchor="end" fill="#1d1d1f">1.5 GB</text>
+<text x="240" y="161" font-size="13" fill="#1d1d1f">Notion  · Electron</text>
+<text x="230" y="183" font-size="13" text-anchor="end" fill="#1d1d1f">1.3 GB</text>
+<text x="240" y="183" font-size="13" fill="#1d1d1f">Claude  · Electron</text>
+<text x="230" y="205" font-size="13" text-anchor="end" fill="#8e8e93">374 MB</text>
+<text x="240" y="205" font-size="13" fill="#8e8e93">claude</text>
+<text x="230" y="227" font-size="13" text-anchor="end" fill="#1d1d1f">346 MB</text>
+<text x="240" y="227" font-size="13" fill="#1d1d1f">Microsoft Outlook</text>
+<line x1="172" x2="648" y1="238" y2="238" stroke="#dcdce0"/>
+<text x="174" y="260" font-size="11" font-weight="700" fill="#8e8e93">What to do</text>
+<text x="186" y="282" font-size="13" font-weight="400" fill="#1d1d1f">Notion uses 1.5 GB: switch to the web version (quits the app)</text>
+<text x="186" y="304" font-size="13" font-weight="400" fill="#1d1d1f">Claude uses 1.3 GB: switch to the web version (quits the app)</text>
+<text x="186" y="326" font-size="13" font-weight="400" fill="#8e8e93">Web pages (Safari, Mail…) uses 3.3 GB: close or unload tabs</text>
+<text x="186" y="348" font-size="13" font-weight="400" fill="#8e8e93">Quit (⌘Q) apps you are not using, closing the window is not enough</text>
+<line x1="172" x2="648" y1="359" y2="359" stroke="#dcdce0"/>
+<rect x="166" y="365" width="488" height="22" rx="5" fill="#0a64d6"/>
+<text x="186" y="381" font-size="13" fill="#ffffff">Lighten macOS</text>
+<rect x="598" y="368" width="22" height="16" rx="8" fill="#ffffff" fill-opacity="0.25"/><text x="609" y="380" font-size="11" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+<text x="644" y="381" font-size="13" text-anchor="end" fill="#ffffff">›</text>
+<text x="186" y="403" font-size="13" font-weight="400" fill="#1d1d1f">Open in Terminal</text>
+<text x="644" y="403" font-size="13" text-anchor="end" fill="#8e8e93">⌘T</text>
+<text x="186" y="425" font-size="13" font-weight="400" fill="#1d1d1f">Activity Monitor</text>
+<text x="644" y="425" font-size="13" text-anchor="end" fill="#8e8e93">⌘A</text>
+<text x="171" y="447" font-size="12" fill="#1d1d1f">✓</text>
+<text x="186" y="447" font-size="13" font-weight="400" fill="#1d1d1f">Open at Login</text>
+<line x1="172" x2="648" y1="458" y2="458" stroke="#dcdce0"/>
+<text x="186" y="480" font-size="13" font-weight="400" fill="#1d1d1f">About MemBar</text>
+<text x="186" y="502" font-size="13" font-weight="400" fill="#1d1d1f">Quit MemBar</text>
+<text x="644" y="502" font-size="13" text-anchor="end" fill="#8e8e93">⌘Q</text>
+<g filter="url(#s)"><rect x="654" y="359" width="400" height="320" rx="10" fill="#f4f4f6" stroke="#d2d2d7"/></g><text x="680" y="383" font-size="13" font-weight="400" fill="#8e8e93">For this MacBook with 8 GB</text><line x1="666" x2="1042" y1="394" y2="394" stroke="#dcdce0"/><text x="668" y="416" font-size="11" font-weight="700" fill="#8e8e93">Visual effects</text><text x="680" y="438" font-size="13" fill="#1d1d1f">Reduce transparency</text><text x="680" y="454" font-size="11" fill="#8e8e93">Small gain: less graphics work, longer battery</text><text x="665" y="476" font-size="12" fill="#1d1d1f">✓</text><text x="680" y="476" font-size="13" fill="#1d1d1f">Reduce motion</text><text x="680" y="492" font-size="11" fill="#8e8e93">Already on</text><line x1="666" x2="1042" y1="503" y2="503" stroke="#dcdce0"/><text x="668" y="525" font-size="11" font-weight="700" fill="#8e8e93">Desktop</text><text x="665" y="547" font-size="12" fill="#1d1d1f">✓</text><text x="680" y="547" font-size="13" fill="#1d1d1f">Hide widgets on the desktop</text><text x="680" y="563" font-size="11" fill="#8e8e93">Already on</text><line x1="666" x2="1042" y1="574" y2="574" stroke="#dcdce0"/><text x="668" y="596" font-size="11" font-weight="700" fill="#8e8e93">At startup</text><text x="680" y="618" font-size="13" fill="#1d1d1f">Login items and background apps</text><text x="680" y="634" font-size="11" fill="#8e8e93">Biggest win: apps that launch silently at startup</text><line x1="666" x2="1042" y1="645" y2="645" stroke="#dcdce0"/><text x="680" y="667" font-size="11" font-weight="400" fill="#8e8e93">Opens the right System Settings pane, you flip the switch</text>
 </svg>

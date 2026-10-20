@@ -46,6 +46,7 @@ MemBar does one thing: it **turns the numbers into advice you can act on**.
 | **Biggest consumers** | Apps sized the way Activity Monitor's *Memory* column sizes them, with every helper process added to its parent app. One line for Notion instead of fourteen. **Click an app to quit it.** |
 | **Electron tag** | Shows which apps bundle their own copy of Chrome. These are usually the heaviest ones. |
 | **What to do** | Short tips worked out from what is actually running right now. Some of them are one click. |
+| **Lighten macOS** | On Macs with 16 GB or less: the system settings worth a look, with their current state and a badge for what's left to do. [More below](#lighten-macos). |
 | **Open in Terminal** | The same reading as text, through `mem`. |
 
 ## How it decides
@@ -62,6 +63,21 @@ When pressure is **normal** and swap is low, the menu shows *"Nothing to do, all
 
 There are no hidden tricks: no `purge`, no `sudo`, no swap tweaks, no kernel settings. You stay in control.
 
+## Lighten macOS
+
+This submenu shows up on Macs with **16 GB or less**. On **8 GB** Macs, a badge counts the settings that are still worth switching on. MemBar detects whether you're on a laptop and adjusts each hint.
+
+| Setting | What you really gain |
+|---|---|
+| **Reduce transparency** | A little less work for the graphics chip, and a bit more battery on a laptop. |
+| **Reduce motion** | Same: fewer animations to draw. |
+| **Hide widgets on the desktop** | Each widget runs as its own small process. |
+| **Login items and background apps** | **The biggest win.** Apps that launch silently at every startup and sit in memory all day. |
+
+**Why does it open System Settings instead of flipping the switch?** macOS blocks apps from changing these settings (`defaults write com.apple.universalaccess` fails with *"Could not write domain"*). The only way around it is to ask for Full Disk Access or Accessibility control, which is far too much for a 400-line tool. So MemBar shows you the **current state** and opens **the exact pane** in one click, and you flip the switch.
+
+There are no exaggerated promises here either: visual effects cost a few dozen MB at most. On a laptop, they matter more for the battery than for memory.
+
 ## Install
 
 Copy this into Terminal:
@@ -72,7 +88,7 @@ curl -fsSL https://raw.githubusercontent.com/kxrz/membar/main/install.sh | zsh
 
 About 5 seconds later, the dot is in your menu bar and will open at every login.
 
-The script **compiles MemBar on your Mac** from the ~300 lines in [`Sources/`](Sources). It downloads no binary, needs no admin rights, and triggers no Gatekeeper warning. Read it before you run it: [`install.sh`](install.sh).
+The script **compiles MemBar on your Mac** from the ~400 lines in [`Sources/`](Sources). It downloads no binary, needs no admin rights, and triggers no Gatekeeper warning. Read it before you run it: [`install.sh`](install.sh).
 
 If macOS asks for the *Command Line Tools*, accept, or run `xcode-select --install` first. It's Apple's free compiler.
 
@@ -114,7 +130,7 @@ What to do
 - **11 MB of memory** while running, measured with `footprint` on a MacBook Neo. A tool for an 8 GB Mac can't be part of the problem.
 - **0 dependencies.** Plain Swift and AppKit, with readings straight from the kernel (`sysctl`, `proc_pid_rusage`). It doesn't run `top` or `ps` in a loop.
 - **No network, no analytics, no account.** The only thing that ever opens a URL is you clicking a "web version" tip.
-- **~300 lines** that you can read in a coffee break.
+- **~400 lines** that you can read in a coffee break.
 
 ## Languages
 

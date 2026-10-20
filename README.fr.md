@@ -45,6 +45,7 @@ MemBar fait une seule chose : **traduire les chiffres en conseils que tu peux ap
 | **Plus gros consommateurs** | Chaque app est mesurée comme dans la colonne *Mémoire* du Moniteur d'activité, avec ses processus annexes additionnés. Une ligne pour Notion au lieu de quatorze. **Un clic sur une app la quitte.** |
 | **Étiquette Electron** | Signale les apps qui embarquent leur propre Chrome. Ce sont souvent les plus lourdes. |
 | **Que faire** | De courts conseils calculés d'après ce qui tourne en ce moment. Certains s'appliquent en un clic. |
+| **Alléger macOS** | Sur les Mac de 16 Go ou moins : les réglages système qui valent le coup, avec leur état actuel et un badge pour ce qu'il reste à faire. [Détails plus bas](#alléger-macos). |
 | **Ouvrir dans le Terminal** | La même mesure en texte, avec la commande `mem`. |
 
 ## Comment elle décide
@@ -61,6 +62,21 @@ Quand la pression est **normale** et le swap faible, le menu affiche seulement *
 
 Pas de tour de magie : pas de `purge`, pas de `sudo`, aucun réglage du swap ni du noyau. Tu gardes la main.
 
+## Alléger macOS
+
+Ce sous-menu apparaît sur les Mac de **16 Go ou moins**. Sur les Mac de **8 Go**, un badge compte les réglages qu'il reste à activer. MemBar détecte si tu es sur un portable et adapte chaque conseil.
+
+| Réglage | Ce que tu y gagnes vraiment |
+|---|---|
+| **Réduire la transparence** | Un peu moins de travail pour la puce graphique, et un peu plus d'autonomie sur un portable. |
+| **Réduire les animations** | Pareil : moins d'animations à dessiner. |
+| **Masquer les widgets du bureau** | Chaque widget tourne dans son propre petit processus. |
+| **Ouverture et apps en arrière-plan** | **Le vrai gain.** Des apps qui se lancent en douce à chaque démarrage et restent en mémoire toute la journée. |
+
+**Pourquoi ouvrir les Réglages au lieu de changer le réglage directement ?** macOS interdit aux apps de modifier ces réglages (`defaults write com.apple.universalaccess` échoue avec *« Could not write domain »*). Le seul moyen de contourner ça serait de demander l'accès complet au disque ou le contrôle de l'interface, ce qui est beaucoup trop pour un outil de 400 lignes. MemBar affiche donc **l'état actuel** et ouvre **le bon panneau** en un clic, et c'est toi qui actives.
+
+Pas de promesse exagérée non plus : les effets visuels coûtent quelques dizaines de Mo au maximum. Sur un portable, ils comptent davantage pour la batterie que pour la mémoire.
+
 ## Installation
 
 Copie ceci dans le Terminal :
@@ -71,7 +87,7 @@ curl -fsSL https://raw.githubusercontent.com/kxrz/membar/main/install.sh | zsh
 
 Environ 5 secondes plus tard, la pastille est dans ta barre des menus et s'ouvrira à chaque connexion.
 
-Le script **compile MemBar sur ton Mac** à partir des ~300 lignes de [`Sources/`](Sources). Il ne télécharge aucun binaire, ne demande aucun droit administrateur et ne déclenche aucune alerte Gatekeeper. Lis-le avant de le lancer : [`install.sh`](install.sh).
+Le script **compile MemBar sur ton Mac** à partir des ~400 lignes de [`Sources/`](Sources). Il ne télécharge aucun binaire, ne demande aucun droit administrateur et ne déclenche aucune alerte Gatekeeper. Lis-le avant de le lancer : [`install.sh`](install.sh).
 
 Si macOS te propose d'installer les *outils de ligne de commande*, accepte, ou lance d'abord `xcode-select --install`. C'est le compilateur gratuit d'Apple.
 

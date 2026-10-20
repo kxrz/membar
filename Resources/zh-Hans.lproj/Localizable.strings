@@ -22,3 +22,22 @@
 "menu.login" = "登录时打开";
 "menu.about" = "关于 MemBar";
 "menu.quit" = "退出 MemBar";
+
+"lighten" = "为 macOS 减负";
+"lighten.forThis" = "适用于这台 %2$@ 内存的 %1$@";
+"device.laptop" = "MacBook";
+"device.desktop" = "Mac";
+"lighten.visual" = "视觉效果";
+"lighten.transparency" = "降低透明度";
+"lighten.motion" = "减弱动态效果";
+"lighten.desktop" = "桌面";
+"lighten.widgets" = "隐藏桌面小组件";
+"lighten.startup" = "启动时";
+"lighten.loginItems" = "登录项与后台应用";
+"sub.on" = "已开启";
+"sub.gpu" = "小幅提升：减轻图形芯片负担";
+"sub.gpu.battery" = "小幅提升：减轻图形负担，延长续航";
+"sub.widgets" = "每个小组件都是独立进程";
+"sub.loginItems" = "最大收益：开机时悄悄启动的应用";
+"lighten.footer" = "打开对应的系统设置面板，由你来切换";
+"unit.gbInt" = "%d GB";

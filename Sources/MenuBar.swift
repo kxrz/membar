@@ -83,13 +83,14 @@ final class MenuBar: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
 
         menu.addItem(.separator())
-        menu.addItem(action(L("menu.terminal"), #selector(openTerminal), "t"))
-        menu.addItem(action(L("menu.activity"), #selector(openActivityMonitor), "a"))
-        let login = action(L("menu.login"), #selector(toggleLogin))
+        if Lighten.shown { menu.addItem(lightenItem()) }
+        menu.addItem(action(L("menu.terminal"), #selector(openTerminal), "t", symbol: "terminal"))
+        menu.addItem(action(L("menu.activity"), #selector(openActivityMonitor), "a", symbol: "chart.bar.xaxis"))
+        let login = action(L("menu.login"), #selector(toggleLogin), symbol: "power")
         login.state = LoginItem.isEnabled ? .on : .off
         menu.addItem(login)
         menu.addItem(.separator())
-        menu.addItem(action(L("menu.about"), #selector(openAbout)))
+        menu.addItem(action(L("menu.about"), #selector(openAbout), symbol: "info.circle"))
         let quit = NSMenuItem(title: L("menu.quit"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         quit.target = NSApp
         menu.addItem(quit)
@@ -104,20 +105,56 @@ final class MenuBar: NSObject, NSApplicationDelegate, NSMenuDelegate {
             .foregroundColor: dimmed ? NSColor.secondaryLabelColor : NSColor.labelColor])
     }
 
+    // "Lighten macOS ②": a badge counts the settings still worth switching on
+    func lightenItem() -> NSMenuItem {
+        let parent = NSMenuItem(title: L("lighten"), action: nil, keyEquivalent: "")
+        parent.image = NSImage(systemSymbolName: "leaf", accessibilityDescription: nil)
+        let pending = Lighten.pending
+        if pending > 0 { parent.badge = NSMenuItemBadge(count: pending) }
+
+        let sub = NSMenu()
+        let device = L(Lighten.isLaptop ? "device.laptop" : "device.desktop")
+        sub.addItem(info(L("lighten.forThis", device, L("unit.gbInt", Int(Lighten.physical >> 30)))))
+        for section in Lighten.settings() {
+            sub.addItem(.separator())
+            sub.addItem(.sectionHeader(title: section.section))
+            for st in section.items {
+                let i = action(st.title, #selector(openPane(_:)), symbol: st.symbol)
+                i.representedObject = st.pane
+                i.state = st.isOn == true ? .on : .off
+                subtitle(i, st.isOn == true ? L("sub.on") : st.hint)
+                sub.addItem(i)
+            }
+        }
+        sub.addItem(.separator())
+        let foot = info("")
+        foot.attributedTitle = NSAttributedString(string: L("lighten.footer"), attributes: [
+            .font: NSFont.menuFont(ofSize: NSFont.smallSystemFontSize), .foregroundColor: NSColor.tertiaryLabelColor])
+        sub.addItem(foot)
+        parent.submenu = sub
+        return parent
+    }
+
+    func subtitle(_ item: NSMenuItem, _ text: String) {
+        if #available(macOS 14.4, *) { item.subtitle = text } else { item.toolTip = text }
+    }
+
     func info(_ title: String) -> NSMenuItem {
         let i = NSMenuItem(title: title, action: nil, keyEquivalent: "")
         i.isEnabled = false
         return i
     }
 
-    func action(_ title: String, _ sel: Selector, _ key: String = "") -> NSMenuItem {
+    func action(_ title: String, _ sel: Selector, _ key: String = "", symbol: String? = nil) -> NSMenuItem {
         let i = NSMenuItem(title: title, action: sel, keyEquivalent: key)
         i.target = self
+        if let symbol { i.image = NSImage(systemSymbolName: symbol, accessibilityDescription: nil) }
         return i
     }
 
     @objc func quitApp(_ sender: NSMenuItem) { (sender.representedObject as? NSRunningApplication)?.terminate() }
     @objc func runFix(_ sender: NSMenuItem) { (sender.representedObject as? () -> Void)?() }
+    @objc func openPane(_ sender: NSMenuItem) { (sender.representedObject as? String).map(Lighten.open) }
     @objc func toggleLogin() { LoginItem.set(!LoginItem.isEnabled) }
     @objc func openAbout() { NSWorkspace.shared.open(URL(string: "https://github.com/kxrz/membar")!) }
 

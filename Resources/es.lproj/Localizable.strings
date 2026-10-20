@@ -22,3 +22,22 @@
 "menu.login" = "Abrir al iniciar sesión";
 "menu.about" = "Acerca de MemBar";
 "menu.quit" = "Salir de MemBar";
+
+"lighten" = "Aligerar macOS";
+"lighten.forThis" = "Para este %1$@ de %2$@";
+"device.laptop" = "MacBook";
+"device.desktop" = "Mac";
+"lighten.visual" = "Efectos visuales";
+"lighten.transparency" = "Reducir transparencia";
+"lighten.motion" = "Reducir movimiento";
+"lighten.desktop" = "Escritorio";
+"lighten.widgets" = "Ocultar widgets del escritorio";
+"lighten.startup" = "Al iniciar";
+"lighten.loginItems" = "Ítems de inicio y apps en segundo plano";
+"sub.on" = "Ya activado";
+"sub.gpu" = "Pequeña mejora: menos trabajo para el chip gráfico";
+"sub.gpu.battery" = "Pequeña mejora: menos gráficos, más batería";
+"sub.widgets" = "Cada widget funciona como un proceso aparte";
+"sub.loginItems" = "La gran mejora: apps que se abren solas al iniciar";
+"lighten.footer" = "Abre el panel adecuado de Ajustes, tú activas la opción";
+"unit.gbInt" = "%d GB";
