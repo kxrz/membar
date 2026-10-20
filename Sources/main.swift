@@ -1,5 +1,5 @@
 // MemBar — know when your Mac is short on memory, and what to close
-// Copyright (C) 2026 Florent Bertiaux — GPL-3.0, see LICENSE and NOTICE
+// Copyright (C) 2026 LesWWW.com (Florent Bertiaux) — GPL-3.0, see LICENSE and NOTICE
 import AppKit
 
 let args = Array(CommandLine.arguments.dropFirst())

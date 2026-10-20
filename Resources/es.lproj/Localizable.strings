@@ -21,6 +21,7 @@
 "menu.activity" = "Monitor de Actividad";
 "menu.login" = "Abrir al iniciar sesión";
 "menu.about" = "Acerca de MemBar";
+"about.by" = "por LesWWW.com";
 "menu.quit" = "Salir de MemBar";
 
 "lighten" = "Aligerar macOS";

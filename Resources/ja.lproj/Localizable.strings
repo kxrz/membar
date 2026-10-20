@@ -21,6 +21,7 @@
 "menu.activity" = "アクティビティモニタ";
 "menu.login" = "ログイン時に開く";
 "menu.about" = "MemBarについて";
+"about.by" = "LesWWW.com 制作";
 "menu.quit" = "MemBarを終了";
 
 "lighten" = "macOSを軽くする";

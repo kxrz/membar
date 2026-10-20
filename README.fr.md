@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/icon.svg" alt="MemBar icon" width="128">
+
 # MemBar
 
 ### Ton Mac 8 Go, expliqué d'un coup d'œil. Et réparé d'un clic.
@@ -123,4 +125,8 @@ English, Français, Español, 日本語, 简体中文. MemBar suit l'ordre des l
 
 ## Licence
 
-[GPL-3.0](LICENSE) © 2026 Florent Bertiaux. Toute version redistribuée doit conserver la mention *« Based on MemBar by Florent Bertiaux »*, comme le précise le fichier [NOTICE](NOTICE).
+[GPL-3.0](LICENSE) © 2026 LesWWW.com (Florent Bertiaux). Toute version redistribuée doit conserver la mention *« Based on MemBar by LesWWW.com »*, comme le précise le fichier [NOTICE](NOTICE).
+
+---
+
+<div align="center"><sub>Une app <b><a href="https://leswww.com">LesWWW.com</a></b>. Why. What. Which way. <i>Pourquoi. Quoi. Par où.</i></sub></div>

@@ -21,6 +21,7 @@
 "menu.activity" = "Moniteur d'activité";
 "menu.login" = "Ouvrir à la connexion";
 "menu.about" = "À propos de MemBar";
+"about.by" = "par LesWWW.com";
 "menu.quit" = "Quitter MemBar";
 
 "lighten" = "Alléger macOS";

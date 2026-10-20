@@ -90,7 +90,9 @@ final class MenuBar: NSObject, NSApplicationDelegate, NSMenuDelegate {
         login.state = LoginItem.isEnabled ? .on : .off
         menu.addItem(login)
         menu.addItem(.separator())
-        menu.addItem(action(L("menu.about"), #selector(openAbout), symbol: "info.circle"))
+        let about = action(L("menu.about"), #selector(openAbout), symbol: "info.circle")
+        subtitle(about, L("about.by"))
+        menu.addItem(about)
         let quit = NSMenuItem(title: L("menu.quit"), action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q")
         quit.target = NSApp
         menu.addItem(quit)
@@ -156,7 +158,21 @@ final class MenuBar: NSObject, NSApplicationDelegate, NSMenuDelegate {
     @objc func runFix(_ sender: NSMenuItem) { (sender.representedObject as? () -> Void)?() }
     @objc func openPane(_ sender: NSMenuItem) { (sender.representedObject as? String).map(Lighten.open) }
     @objc func toggleLogin() { LoginItem.set(!LoginItem.isEnabled) }
-    @objc func openAbout() { NSWorkspace.shared.open(URL(string: "https://github.com/kxrz/membar")!) }
+    // Standard About panel, signed LesWWW.com, with links to the studio and the source
+    @objc func openAbout() {
+        let small = NSFont.systemFont(ofSize: NSFont.smallSystemFontSize)
+        let p = NSMutableParagraphStyle()
+        p.alignment = .center
+        let credits = NSMutableAttributedString(string: L("about.by") + "\n", attributes: [.font: small, .paragraphStyle: p])
+        credits.append(NSAttributedString(string: "Why. What. Which way.\n\n", attributes: [
+            .font: small, .paragraphStyle: p, .foregroundColor: NSColor.secondaryLabelColor]))
+        for (title, url) in [("leswww.com", "https://leswww.com"), ("github.com/kxrz/membar", "https://github.com/kxrz/membar")] {
+            credits.append(NSAttributedString(string: title, attributes: [.font: small, .paragraphStyle: p, .link: URL(string: url)!]))
+            credits.append(NSAttributedString(string: "\n", attributes: [.font: small, .paragraphStyle: p]))
+        }
+        NSApp.activate(ignoringOtherApps: true)
+        NSApp.orderFrontStandardAboutPanel(options: [.credits: credits])
+    }
 
     @objc func openActivityMonitor() {
         NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Applications/Utilities/Activity Monitor.app"))

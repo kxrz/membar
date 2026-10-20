@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="docs/icon.svg" alt="MemBar icon" width="128">
+
 # MemBar
 
 ### Your 8 GB Mac, explained in one glance, with one fix per click.
@@ -157,4 +159,8 @@ To keep it small, MemBar will stay at **five languages and one screen**.
 
 ## License
 
-[GPL-3.0](LICENSE) © 2026 Florent Bertiaux. Any redistributed version must keep the attribution *"Based on MemBar by Florent Bertiaux"*, as described in [NOTICE](NOTICE).
+[GPL-3.0](LICENSE) © 2026 LesWWW.com (Florent Bertiaux). Any redistributed version must keep the attribution *"Based on MemBar by LesWWW.com"*, as described in [NOTICE](NOTICE).
+
+---
+
+<div align="center"><sub>Made by <b><a href="https://leswww.com">LesWWW.com</a></b>. Why. What. Which way.</sub></div>

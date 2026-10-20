@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- MemBar app icon · LesWWW.com brand: flat fills, no shadows, cyan = measured -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="#0a0a0a"/>
+  <!-- Memory module -->
+  <path d="M212 360 H812 V640 H534 V610 H490 V640 H212 Z" fill="#29e5ff"/>
+  <!-- Chips -->
+  <g fill="#0a0a0a">
+    <rect x="252" y="400" width="104" height="132"/>
+    <rect x="384" y="400" width="104" height="132"/>
+    <rect x="536" y="400" width="104" height="132"/>
+    <rect x="668" y="400" width="104" height="132"/>
+  </g>
+  <!-- Contacts -->
+  <g fill="#0a0a0a">
+    <rect x="236" y="572" width="14" height="68"/><rect x="270" y="572" width="14" height="68"/>
+    <rect x="304" y="572" width="14" height="68"/><rect x="338" y="572" width="14" height="68"/>
+    <rect x="372" y="572" width="14" height="68"/><rect x="406" y="572" width="14" height="68"/>
+    <rect x="440" y="572" width="14" height="68"/>
+    <rect x="570" y="572" width="14" height="68"/><rect x="604" y="572" width="14" height="68"/>
+    <rect x="638" y="572" width="14" height="68"/><rect x="672" y="572" width="14" height="68"/>
+    <rect x="706" y="572" width="14" height="68"/><rect x="740" y="572" width="14" height="68"/>
+    <rect x="774" y="572" width="14" height="68"/>
+  </g>
+  <!-- Pressure meter: three bars, the last one under strain -->
+  <rect x="212" y="696" width="180" height="40" fill="#f5f5f2"/>
+  <rect x="422" y="696" width="180" height="40" fill="#f5f5f2"/>
+  <rect x="632" y="696" width="180" height="40" fill="none" stroke="#f5f5f2" stroke-width="8"/>
+  <!-- Signature W -->
+  <path d="M212 236 L232 300 L250 252 L268 300 L288 236" fill="none" stroke="#f5f5f2" stroke-width="14" stroke-linejoin="miter"/>
+</svg>

@@ -6,13 +6,14 @@
   <key>CFBundleName</key><string>MemBar</string>
   <key>CFBundleExecutable</key><string>MemBar</string>
   <key>CFBundlePackageType</key><string>APPL</string>
-  <key>CFBundleShortVersionString</key><string>1.1.0</string>
-  <key>CFBundleVersion</key><string>2</string>
+  <key>CFBundleShortVersionString</key><string>1.2.0</string>
+  <key>CFBundleVersion</key><string>3</string>
   <key>CFBundleDevelopmentRegion</key><string>en</string>
   <key>CFBundleLocalizations</key>
   <array><string>en</string><string>fr</string><string>es</string><string>ja</string><string>zh-Hans</string></array>
   <key>LSMinimumSystemVersion</key><string>14.0</string>
+  <key>CFBundleIconFile</key><string>AppIcon</string>
   <key>LSUIElement</key><true/>
-  <key>NSHumanReadableCopyright</key><string>© 2026 Florent Bertiaux · GPL-3.0</string>
+  <key>NSHumanReadableCopyright</key><string>© 2026 LesWWW.com · GPL-3.0</string>
 </dict>
 </plist>
